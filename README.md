@@ -1,156 +1,67 @@
-# MERN Boilerplate
-MongoDB Express.js React.js Node.js
+# [![mit license](https://img.shields.io/github/license/mernjs/create-mern-app)](https://github.com/mernjs/create-mern-app/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/create-mernjs-app)](https://www.npmjs.com/package/create-mernjs-app) [![Gitter](https://badges.gitter.im/mernjs/mernjs.svg)](https://gitter.im/mernjs/mernjs-community) [![npm downloads](https://img.shields.io/npm/dy/create-mernjs-app)](https://www.npmjs.com/package/create-mernjs-app)
 
-A Full MERN Stack Boilerplate for Web Apps. Includes a local authentication system using passport. User is given a simple profile with Full Name and Profile Picture. User is also able to reset password and username case.
+<p align="center">
+  <a target="_blank" href="https://mernjs.github.io/create-mern-app" rel="noopener">
+ <img src="https://mernjs.github.io/create-mern-app/assets/logo1.png" alt="Logo"></a>
+</p>
+<h5 align="center">Set up a modern web, mobile, AR/VR and desktop app by running one command.</h5>
 
-NEW: For those of you who wish to separate the client and server into separate projects, I have created two repos that do just that! Check out [MERN Client](https://github.com/djizco/mern-client) and [MERN Server](https://github.com/djizco/mern-server).
+<h5 align="center">
+If you find this code useful, don't forget to <a target="_blank" href="https://github.com/mernjs/create-mern-app" rel="noopener">⭐ star the repo ⭐</a> 
+</h5>
 
-## Requirements
+<h4>Create MERN App</h4>
+<h5>Create MERN App provide boilerplates for building Web App, Mobile App, Desktop App & Chrome Extension in JavaScript.</h5>
 
-* Operating System: MacOS or Linux
-* [Node.js](https://nodejs.org/) (I recommend installing with [NVM](https://github.com/nvm-sh/nvm))
-* [Homebrew](https://brew.sh) (to install MongoDB)
+<blockquote>
+<h5>
+Before downloading the source code, go over the official documentation of <a target="_blank" href="https://mernjs.github.io/create-mern-app/mern-roadmap" rel="noopener">MERN</a>  then continue with the Create MERN App.
+</h5>
+</blockquote>
 
-## Quick Start
-
-#### Setup
-
-```bash
-npm install
-
-# Install MongoDB
-brew tap mongodb/brew
-brew install mongodb-community
-```
-
-Start the database
-```bash
-brew services start mongodb-community
-```
-
-#### for Development
-
-Start the client
-```bash
-npm run start:client
-```
-
-Start the server
-```bash
-npm run start:server
-```
-
-#### for Production
-
-```bash
-npm run build
-npm start:server
-```
-
-#### Other Commands
-
-```bash
-npm start
-npm test
-npm run lint
-npm run lint:fix
-npm run test:verbose
-npm run test:coverage
-npm run test:watch-client
-npm run test:watch-server
-```
-
-## Setup Instructions
-
-Note: This is now a github template project. This makes copying the contents of the project
-into a new repo very simple.
-
-To setup your own project, you will need to copy the contents of this project into a new repo.
-You will need to update the content in these files to names of your project and yourself:
-
-* package.json: name, version, description, repository, author, bugs, homepage
-* LICENSE: (update to your preferred license)
-* client/index.html: description and title
-* this README.md
-
-This is also a good time to go through the included libraries to add or remove features that you want.
-
-After this you can commit the files into a new repository and push up to your github.
-You can now start updating files in your client to begin working on your own project!
-
-## Features
-
-* Webpack conveniently bundles your code for you.
-* Babel lets you use ES6/7 features.
-* CSS pre-processor setup for LESS and SASS lets you keep your styles clean and organized.
-* ESLint helps you maintain a high level of code quality.
-* Jest gives you a robust testing framework to make sure your code works.
-
-## Code Structure
+<h4>Creating an App</h4>
 
 ```
-- client
-  - api
-  - assets
-    - images
-    - icons
-  - components
-    - atoms
-    - molecules
-    - organisms
-    - pages
-    - environment
-  - hooks
-  - store
-    - actions
-    - reducers
-    - thunks
-    - tests
-  - styles
-  - utils
-- server
-  - config
-  - database
-  - routes
-- scripts
+npx create-mernjs-app my_project 
 ```
 
-Component Heirarchy:
+Read official [docs](https://mernjs.github.io/create-mern-app) for more information.
 
-Environment > Pages > Organisms > Molecules > Atoms
+<h4>Templates</h4>
 
-This is based on atomic design. Learn more about [atomic design](http://bradfrost.com/blog/post/atomic-web-design/).
+| SN. | Technology | Platform | Dependencies |
+| ------ | ------ | ------ | ------ |
+| 1 | [MERN Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/mern-boilerplate) | Web | @reduxjs/toolkit axios body-parser cors dotenv ejs express faker history lodash mongoose next next-pwa next-redux-wrapper react react-dom react-icons react-redux react-toastify redux redux-form redux-logger redux-persist redux-saga styled-components |
+| 2 | [NodeJS Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/nodejs-boilerplate) | Web (Rest APIs) | body-parser cors dotenv ejs express faker lodash mongoose morgan |
+| 3 | [NextJS Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/nextjs-boilerplate) | Web | @reduxjs/toolkit axios history lodash next next-redux-wrapper react react-dom react-icons react-redux react-toastify redux redux-form redux-logger redux-persist redux-saga styled-components |
+| 4 | [ReactJS Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/reactjs-boilerplate) | Web | @reduxjs/toolkit axios history react react-dom react-icons react-redux react-router-dom react-scripts react-toastify redux redux-form redux-logger redux-persist styled-components web-vitals |
+| 5 | [ElectronJS Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/electronjs-boilerplate) | Desktop (Window, Linux, Mac) | @reduxjs/toolkit axios history react react-dom react-icons react-redux react-router-dom react-scripts react-toastify redux redux-form redux-logger redux-persist styled-components web-vitals |
+| 6 | [React Native Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/react-native-boilerplate) | Mobile (Android, iOS) | @react-native-async-storage/async-storage @react-native-community/masked-view @react-navigation/native @react-navigation/stack @reduxjs/toolkit axios lodash native-base react react-native react-native-gesture-handler react-native-safe-area-context react-native-screens react-native-toast-message react-redux redux redux-form redux-logger redux-persist styled-components |
+| 7 | [ReactJS AdminLTE Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/reactjs-adminlte-boilerplate) | Web | @reduxjs/toolkit axios history react react-dom react-icons react-redux react-router-dom react-scripts react-toastify styled-components web-vitals |
+| 8 | [ReactJS Chrome Extension Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/reactjs-chrome-extension-boilerplate) | Web | @hot-loader/react-dom @reduxjs/toolkit axios history react react-dom react-icons react-redux react-router-dom webpack react-toastify styled-components |
+| 9 | [ReactJS Webpack Boilerplate](https://github.com/mernjs/create-mern-app/tree/master/templates/boilerplates/reactjs-webpack-boilerplate) | Web | @reduxjs/toolkit axios history react react-dom react-icons react-redux react-router-dom webpack react-toastify styled-components |
 
-## Technologies
+<h4>Support</h4>
 
-[React](https://facebook.github.io/react/) - View Library
+If you have any issues or bugs, report in our [GitHub](https://github.com/mernjs/create-mern-app/issues)
 
-[Redux](http://redux.js.org/) - State Manager
+Please email us, If you have any query or security concerns via mernjscommunity@gmail.com
 
-[Webpack](https://webpack.github.io/) - Module Bundler
+<h4>Community</h4>
 
-[Express](http://expressjs.com/) - Node Application Framework
+Join us on the [Gitter Group](https://gitter.im/mernjs/mernjs-community) to discuss features, questions, and suggestions.
 
-[MongoDB](https://www.mongodb.com/) - Document Database
+<h4>Author</h4>
+<table>
+  <tr>
+    <td>
+      <img src="https://2.gravatar.com/avatar/bd913f88dce5db0cc64d85d9c486ccfd?s=100&d=mm" width="100">
+    </td>
+    <td>
+      Vijay Pratap Singh<br />
+      <a href="https://www.linkedin.com/in/vprtsingh">Software Engineer</a><br />
+    </td>
+  </tr>
+</table>
 
-[Mongoose](http://mongoosejs.com/) - MongoDB Framework
-
-[Passport](http://www.passportjs.org/) - Authentication Framework
-
-[React Notifications Component](https://teodosii.github.io/react-notifications-component/) - Notification System
-
-[Bulma](http://bulma.io/) - CSS Framework
-
-[React Bulma Companion](https://github.com/djizco/react-bulma-companion) - Bulma Component Library
-
-[FontAwesome](http://fontawesome.io/) - Icons
-
-[Ramda](http://ramdajs.com/) - Functional Library
-
-[date-fns](https://date-fns.org/) - Date Functions Library
-
-[SuperAgent](https://github.com/visionmedia/superagent) - HTTP Request Library
-
-[ESLint](http://eslint.org/) - Code Linter
-
-[Jest](https://jestjs.io/) - Testing Framework
+<p style="margin-left: '30px', margin-right: '30px'"><span style="text-align: 'left'">©2021 <a href="https://github.com/mernjs/create-mern-app/blob/master/LICENSE" target="_blank"> Create MERN App</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="float: 'right'"><b>By: </b> <a href="https://vijay-pratap-singh.netlify.app" target="_blank"> Vijay Pratap Singh</a></span></p>

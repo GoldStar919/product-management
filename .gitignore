@@ -1,31 +1,48 @@
-# Dependency Modules
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 node_modules
+.pnp
+.pnp.js
+package-lock.json
 
-# App Packaged
-dist
-build
-*.zip
-
-# Test
+# testing
 coverage
 
-# Environment
-.env*
+# next.js
+.next/
+out/
 
-# NPM
-.npm
-package-lock.json
-yarn.lock
+# production
+build
+production
 
-# Logs
-logs
-*.log
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Patches
-patches
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
 
-# OSX
-.DS_Store
+# vercel
+.vercel
+
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
