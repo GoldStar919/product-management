@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(245, 245, 245);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mainbody {
+  min-height: calc(100vh - 80px);
+}
+
+.loginbody {
+  min-height: calc(100vh - 300px);
+}
+
+* {
+  font-family: 'Montserrat';
+  font-display: swap;
+}
+
+a {
+  cursor: pointer;
+  color: #4c84ff;
+  font-size: 18px;
+  letter-spacing: 0.1px;
+  line-height: 25px;
+  padding: 0;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #494d55;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* 
+.MuiFormLabel-root,
+.MuiInputBase-root,
+.MuiSvgIcon-root{
+  color: white !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: solid 1px white !important;
+}
+.MuiInput-underline:after {
+  border-bottom: solid 2px white !important;
+} */

@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 import Router from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,73 +14,47 @@ const Header = (props) => {
   };
 
   return (
-    <HeaderWrapper>
-      <div className="container">
-        <Navbar>
-          <Logo>
+    <div className="header bg-lime-400 w-full min-h-min border border-solid border-4 border-blue">
+      <div className="w-full">
+        <div className="block md:flex gap-4 px-3 py-1">
+          <div className="block gap-4 md:w-3/5 md:shrink lg:w-2/3 text-left my-4">
             <Link href="/">
-              <b>Create MERN App</b>
+              <h1 className="text-3xl">UoD SmartFactory Web Portal</h1>
             </Link>
-          </Logo>
-          <ul>
-            {user === null && (
-              <>
-                <li>
-                  <Link href="/login">Login</Link>
-                </li>
-                <li>
-                  <Link href="/signup">Signup</Link>
-                </li>
-              </>
-            )}
-            {user !== null && (
-              <>
-                <li>
-                  <a onClick={logout} href="javaScript:void(0)">
-                    Logout
-                  </a>
-                </li>
-              </>
-            )}
-          </ul>
-        </Navbar>
+          </div>
+          <div className="w-full border-0 border-zinc-600 md:w-2/5 lg:w-1/3 sm:mt-2 text-right my-4 relative">
+            <ul className="block flex gap-2 absolute bottom-0 right-0">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/products">Products</Link>
+              </li>
+              {user === null && (
+                <>
+                  <li>
+                    <Link href="/login">Login</Link>
+                  </li>
+                  <li>
+                    <Link href="/signup">Signup</Link>
+                  </li>
+                </>
+              )}
+              {user !== null && (
+                <>
+                  <li>
+                    <a onClick={logout} href="javaScript:void(0)">
+                      Logout
+                    </a>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
+        </div>
       </div>
-    </HeaderWrapper>
+    </div>
   );
 };
 
 export default Header;
-
-const HeaderWrapper = styled.header`
-  padding: 20px 0;
-  background-color: #fff;
-  width: 100%;
-  border-top: 5px solid #4c84ff;
-  box-shadow: 0 2px 10px 0 #00000017;
-`;
-
-const Logo = styled.div`
-  flex: 6;
-  width: 300px;
-  display: flex;
-  justify-content: flex-start;
-`;
-
-const Navbar = styled.nav`
-  flex: 5;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 25px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  ul {
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    li {
-      margin-left: 30px;
-    }
-  }
-`;
