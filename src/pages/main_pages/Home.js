@@ -1,5 +1,6 @@
 import React from 'react';
 import Video from '../../components/s_components/video';
+import { Header, Footer } from '../../components';
 import Router from 'next/router';
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     <>
       <div className="w-full">
         <div className="mainbody">
+          <Header />
           <h1 className="text-center text-4xl font-normal p-4">Home Page.</h1>
           <div className="block md:flex gap-4 p-8 m-auto">
             <div className="block gap-4 md:w-3/5 md:shrink lg:w-2/3 m-auto">
@@ -25,6 +27,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -28,7 +28,7 @@ const Header = (props) => {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/products">Products</Link>
+                <Link href="/main_pages/Products">Products</Link>
               </li>
               {user === null && (
                 <>
@@ -43,7 +43,10 @@ const Header = (props) => {
               {user !== null && (
                 <>
                   <li>
-                    <a onClick={logout} href="javaScript:void(0)">
+                    <Link href="/main_pages/Order">Order</Link>
+                  </li>
+                  <li>
+                    <a onClick={logout}>
                       Logout
                     </a>
                   </li>
