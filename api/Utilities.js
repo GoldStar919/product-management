@@ -56,7 +56,6 @@ module.exports.apiKeyValidate = (req, res, next) => {
 
 module.exports.signAccessToken = (payload) => {
   try {
-    console.log('payload', payload);
     const JWT = require('jsonwebtoken');
     return new Promise((resolve, reject) => {
       const options = {

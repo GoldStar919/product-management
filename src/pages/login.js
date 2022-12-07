@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header, Footer, TextInput, H2, Button } from '../components';
-import styled from 'styled-components';
+import { Header, Footer, TextInput } from '../components';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import apiRequest from '../Utilities';
 import { AuthActions } from '../reducers/AuthReducer';
 import { useForm, Controller } from 'react-hook-form';
 import Router from 'next/router';
+import { Button } from '@material-ui/core';
 
 const Login = () => {
   const {
@@ -29,66 +29,57 @@ const Login = () => {
 
   return (
     <>
-      <ScrollView>
-        <Header />
-        <Container>
-          <H2>Sign In</H2>
-          <form onSubmit={handleSubmit((values) => login(values))}>
-            <Controller
-              name="email"
-              control={control}
-              render={(field) => (
-                <TextInput
-                  {...field}
-                  type="text"
-                  placeholder="Enter Your Email"
-                  errors={errors}
-                />
-              )}
-              rules={{ required: 'Email is required.' }}
-            />
-            <Controller
-              name="password"
-              control={control}
-              render={(field) => (
-                <TextInput
-                  {...field}
-                  type="password"
-                  placeholder="Enter Your Password"
-                  errors={errors}
-                />
-              )}
-              rules={{ required: 'Password is required.' }}
-            />
-            <Button
-              disabled={isSubmitting}
-              className="btn btn-secondary"
-              type="submit"
-            >
-              {isSubmitting ? 'Submitting...' : 'Log In'}
-            </Button>
-            <div>
-              Don&apos;t have an account? <Link href="/signup"> Signup</Link>
-            </div>
-          </form>
-        </Container>
-      </ScrollView>
-      <Footer />
+      <div className="w-full">
+        <div className="mainbody">
+          <Header />
+          <h1 className="text-center text-4xl font-normal p-8">Sign In</h1>
+          <div className="block flex gap-4 align-center">
+            <form className="sm:w-3/4 md:w-1/2 xl:w-1/3 mx-auto" onSubmit={handleSubmit((values) => login(values))}>
+              <div className="justify-item-center">
+                <div className="">
+                  <Controller
+                    name="email"
+                    control={control}
+                    render={(field) => (
+                      <TextInput
+                        {...field}
+                        type="text"
+                        placeholder="Enter Your Email"
+                        errors={errors}
+                      />
+                    )}
+                    rules={{ required: 'Email is required.' }}
+                  />
+                </div>
+                <div className="">
+                  <Controller
+                    name="password"
+                    control={control}
+                    render={(field) => (
+                      <TextInput
+                        {...field}
+                        type="password"
+                        placeholder="Enter Your Password"
+                        errors={errors}
+                      />
+                    )}
+                    rules={{ required: 'Password is required.' }}
+                  />
+                </div>
+                <div className="w-full text-center">
+                  <Button variant="contained" className='w-1/3' type="submit">{isSubmitting ? 'Submitting...' : 'Log In'}</Button>
+                </div>
+                <div className="text-center">
+                  Don&apos;t have an account? <Link href="/signup"> Signup</Link>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <Footer />
+      </div>
     </>
   );
 };
 
 export default Login;
-
-const ScrollView = styled.div`
-  min-height: calc(100vh - 80px);
-`;
-
-const Container = styled.div`
-  align-content: center;
-  padding-top: 50px;
-  min-height: 100%;
-  margin: auto;
-  width: 400px;
-  max-width: 100%;
-`;

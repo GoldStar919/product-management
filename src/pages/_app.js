@@ -7,6 +7,7 @@ import { makeStore } from '../Store';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
+import "./index.css";
 
 class MyApp extends App {
   static getInitialProps = async ({ Component, ctx }) => {

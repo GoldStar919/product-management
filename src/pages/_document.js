@@ -18,7 +18,7 @@ class MyDocument extends Document {
             name="description"
             content="Create MERN App provides starter kits for building web, desktop and mobile apps in pure JavaScript."
           />
-          <title>Create MERN App</title>
+          <title>PRODUCTS</title>
           <meta property="og:type" content="website" />
           <meta
             property="og:url"

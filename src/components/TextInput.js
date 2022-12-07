@@ -10,7 +10,7 @@ const Input = (props) => {
       {label && <label>{label}</label>}
       <input
         placeholder={placeholder}
-        className="text-input"
+        className="text-input w-full"
         type={type}
         {...field}
       />
