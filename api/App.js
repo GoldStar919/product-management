@@ -30,4 +30,8 @@ Route.route('/api/v1/auth/user')
   .get(Utilities.verifyAccessToken, AuthController.getUserByID)
   .all(Utilities.send405);
 
+Route.route('/api/v1/order/ordering')
+  .post(AuthController.ordering)
+  .all(Utilities.send405);
+
 module.exports = Route;

@@ -6,10 +6,12 @@ import storage from 'redux-persist/lib/storage';
 
 import CoreReducer from './reducers/CoreReducer';
 import AuthReducer from './reducers/AuthReducer';
+import OrderReducer from './reducers/OrderReducer';
 
 const appReducer = combineReducers({
   core: CoreReducer,
   auth: AuthReducer,
+  order: OrderReducer,
 });
 
 const rootReducer = (state, action) => {

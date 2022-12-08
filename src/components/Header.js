@@ -43,7 +43,7 @@ const Header = (props) => {
               {user !== null && (
                 <>
                   <li>
-                    <Link href="/main_pages/ConfirmOrder">Order</Link>
+                    <Link href="/main_pages/Order">Order</Link>
                   </li>
                   <li>
                     <a onClick={logout}>
