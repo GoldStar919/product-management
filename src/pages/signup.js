@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header, Footer, TextInput } from '../components';
+import { Header, Footer, TextInput, Button } from '../components';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import apiRequest from '../Utilities';
 import { AuthActions } from '../reducers/AuthReducer';
 import { useForm, Controller } from 'react-hook-form';
 import Router from 'next/router';
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 
 const Signup = () => {
   const {
@@ -103,7 +103,13 @@ const Signup = () => {
                   />
                 </div>
                 <div className="w-full text-center">
-                  <Button variant="contained" className='w-1/3' type="submit">{isSubmitting ? 'Submitting...' : 'Sign Up'}</Button>
+                <Button
+                  className="btn btn-secondary w-1/2"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Sign Up'}
+                </Button>
                 </div>
                 <div className="text-center">
                   Don&apos;t have an account? <Link href="/login">Login</Link>
