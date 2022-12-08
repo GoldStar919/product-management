@@ -18,6 +18,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const login = async (payload) => {
+    console.log(payload);
     try {
       const response = await apiRequest.post(`auth/login`, payload);
       dispatch(AuthActions.setAuth(response.data.data));
@@ -38,7 +39,7 @@ const Login = () => {
               <div className="justify-item-center">
                 <div className="">
                   <Controller
-                    name="sss"
+                    name="email"
                     control={control}
                     render={(field) => (
                       <TextInput

@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { Header, Footer, BasicSelect, Button } from '../../components';
 // import { Button } from '@material-ui/core';
+import Router from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Order = () => {
+
+  //Use for all the dispatch actions
+  const dispatch = useDispatch();
+
+  // const channelList = useSelector(state => state.synth.channelList);
+  // dispatch({ type: 'CHANGE_CHANNEL', payload: sValue });
   
   const user = useSelector((state) => state.auth.user);
+
+  const colorVal = useSelector(state => state.order.color);
+  const fuseVal = useSelector(state => state.order.fuse);
+  const quantityVal = useSelector(state => state.order.quantity);
   
   const colourOptions = ["Black", "Blue", "Gray", "Red"];
   const fuseOptions = ["1", "2"];
@@ -20,12 +31,14 @@ const Order = () => {
   } = useForm();
   
   const onSubmit = (data) => {
-    console.log(data);
+    const orderValue = {color: data.color, fuse: data.fuse, quantity: data.quantity};
+    dispatch({type: "CHANGE_ORDER", payload: orderValue});
+    Router.push('/main_pages/ConfirmOrder');
   }
   
-  const [colorValue, setColor] = useState(colourOptions[0]);
-  const [fuseValue, setFuses] = useState(fuseOptions[0]);
-  const [quantityValue, setQuantity] = useState(quantityOptions[0]);
+  const [colorValue, setColor] = useState(colorVal);
+  const [fuseValue, setFuses] = useState(fuseVal);
+  const [quantityValue, setQuantity] = useState(quantityVal);
 
   return (
     <>

@@ -6,8 +6,13 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const ConfirmOrder = (props) => {
 
-  const {color = "black", fuse = 1, quantity = 1} = props;
-  
+  //Use for all the dispatch actions
+  const dispatch = useDispatch();
+
+  const colorVal = useSelector(state => state.order.color);
+  const fuseVal = useSelector(state => state.order.fuse);
+  const quantityVal = useSelector(state => state.order.quantity);
+
   const user = useSelector((state) => state.auth.user);
 
   const submitHandler = (e) => {
@@ -27,10 +32,7 @@ const ConfirmOrder = (props) => {
 
   function handlesubmit_back(event) {
     event.preventDefault();
-    const { value : color } = event.target.color;
-    const { value : fuse } = event.target.fuse;
-    const { value : quantity } = event.target.quantity;
-    console.log("back", color, fuse, quantity);
+    Router.push('/main_pages/Order');
   }
   
   function handlesubmit_order(event) {
@@ -39,7 +41,20 @@ const ConfirmOrder = (props) => {
     const { value : fuse } = event.target.fuse;
     const { value : quantity } = event.target.quantity;
     console.log("order", color, fuse, quantity);
+    const orderValue = {color: color, fuse: fuse, quantity: quantity};
+    ordering(orderValue);
   }
+
+  const ordering = async (payload) => {
+    console.log(payload);
+    try {
+      alert("Successfully Ordered!");
+      // const response = await apiRequest.post(`order/ordering`, payload);
+      Router.push('/');
+    } catch (error) {
+      console.log('ordering', error);
+    }
+  };
 
   return (
     <>
@@ -60,7 +75,7 @@ const ConfirmOrder = (props) => {
                         <h3>Select Colour : </h3>
                       </div>
                       <div className='w-full text-center m-auto'>
-                        <input value={color} name="color" className="area-disabled text-center" />
+                        <input value={colorVal} name="color" className="area-disabled text-center" />
                       </div>
                     </div>
                     <div className="block flex gap-1 w-full m-auto p-2">
@@ -68,7 +83,7 @@ const ConfirmOrder = (props) => {
                         <h3>Number of fuses required : </h3>
                       </div>
                       <div className='w-full text-center m-auto'>
-                        <input value={fuse} name="fuse" className="area-disabled text-center" />
+                        <input value={fuseVal} name="fuse" className="area-disabled text-center" />
                       </div>
                     </div>
                     <div className="block flex gap-1 w-full m-auto p-2">
@@ -76,7 +91,7 @@ const ConfirmOrder = (props) => {
                         <h3>Quantity required : </h3>
                       </div>
                       <div className='w-full text-center m-auto'>
-                        <input value={quantity} name="quantity" className="area-disabled text-center" />
+                        <input value={quantityVal} name="quantity" className="area-disabled text-center" />
                       </div>
                     </div>
                     <div className="block flex gap-1 w-full m-auto p-2">
@@ -87,7 +102,8 @@ const ConfirmOrder = (props) => {
                     <div className="block flex gap-1 w-full m-auto p-2">
                       <div className='w-full md:1/2 m-auto text-center'>
                         <Button
-                          className="btn btn-secondary w-1/2"
+                          variant="contained"
+                          className="bg-emerald-400 w-3/4 rounded-full font-bold"
                           type="submit"
                           id="back"
                         >
@@ -96,7 +112,8 @@ const ConfirmOrder = (props) => {
                       </div>
                       <div className='w-full md:1/2 m-auto text-left'>
                         <Button
-                          className="btn btn-secondary w-1/2"
+                          variant="contained"
+                          className="bg-emerald-400 w-3/4 rounded-full font-bold"
                           type="submit"
                           id="order"
                         >

@@ -1,5 +1,6 @@
 const Utilities = require('../Utilities');
 const User = require('../models/User');
+// const Order = require('../models/Order');
 
 class AuthController {
   async login(req, res) {
@@ -51,6 +52,26 @@ class AuthController {
         ...data,
         accessToken,
       });
+    } catch (error) {
+      Utilities.apiResponse(res, 500, error);
+    }
+  }
+
+  async ordering(req, res) {
+    try {
+      // const order = new Order(req.body);
+      // const savedOrder = await order.save();
+      // const data = {
+      //   _id: savedOrder._id,
+      //   color: savedOrder.color,
+      //   fuse: savedOrder.fuse,
+      //   quantity: savedOrder.quantity,
+      // };
+      // const accessToken = await Utilities.signAccessToken(data);
+      // Utilities.apiResponse(res, 200, 'Order Created Successfully!', {
+      //   ...data,
+      //   accessToken,
+      // });
     } catch (error) {
       Utilities.apiResponse(res, 500, error);
     }
